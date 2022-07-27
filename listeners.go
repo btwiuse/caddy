@@ -15,9 +15,6 @@
 package caddy
 
 import (
-	"context"
-	"crypto/tls"
-	"errors"
 	"fmt"
 	"net"
 	"os"
@@ -27,9 +24,6 @@ import (
 	"sync/atomic"
 	"syscall"
 	"time"
-
-	"github.com/lucas-clemente/quic-go"
-	"github.com/lucas-clemente/quic-go/http3"
 )
 
 // Listen is like net.Listen, except Caddy's listeners can overlap
@@ -83,27 +77,6 @@ func ListenPacket(network, addr string) (net.PacketConn, error) {
 	}
 
 	return &fakeClosePacketConn{sharedPacketConn: sharedPc.(*sharedPacketConn)}, nil
-}
-
-// ListenQUIC returns a quic.EarlyListener suitable for use in a Caddy module.
-// Note that the context passed to Accept is currently ignored, so using
-// a context other than context.Background is meaningless.
-func ListenQUIC(addr string, tlsConf *tls.Config) (quic.EarlyListener, error) {
-	lnKey := "quic/" + addr
-
-	sharedEl, _, err := listenerPool.LoadOrNew(lnKey, func() (Destructor, error) {
-		el, err := quic.ListenAddrEarly(addr, http3.ConfigureTLSConfig(tlsConf), &quic.Config{})
-		if err != nil {
-			return nil, err
-		}
-		return &sharedQuicListener{EarlyListener: el, key: lnKey}, nil
-	})
-
-	ctx, cancel := context.WithCancel(context.Background())
-	return &fakeCloseQuicListener{
-		sharedQuicListener: sharedEl.(*sharedQuicListener),
-		context:            ctx, contextCancel: cancel,
-	}, err
 }
 
 // fakeCloseListener is a private wrapper over a listener that
@@ -168,39 +141,6 @@ func (fcl *fakeCloseListener) Close() error {
 		// it apparently even works on Windows.
 		_ = fcl.sharedListener.setDeadline()
 		_, _ = listenerPool.Delete(fcl.sharedListener.key)
-	}
-	return nil
-}
-
-type fakeCloseQuicListener struct {
-	closed              int32 // accessed atomically; belongs to this struct only
-	*sharedQuicListener       // embedded, so we also become a quic.EarlyListener
-	context             context.Context
-	contextCancel       context.CancelFunc
-}
-
-// Currently Accept ignores the passed context, however a situation where
-// someone would need a hotswappable QUIC-only (not http3, since it uses context.Background here)
-// server on which Accept would be called with non-empty contexts
-// (mind that the default net listeners' Accept doesn't take a context argument)
-// sounds way too rare for us to sacrifice efficiency here.
-func (fcql *fakeCloseQuicListener) Accept(_ context.Context) (quic.EarlyConnection, error) {
-	conn, err := fcql.sharedQuicListener.Accept(fcql.context)
-	if err == nil {
-		return conn, nil
-	}
-
-	// if the listener is "closed", return a fake closed error instead
-	if atomic.LoadInt32(&fcql.closed) == 1 && errors.Is(err, context.Canceled) {
-		return nil, fakeClosedErr(fcql)
-	}
-	return nil, err
-}
-
-func (fcql *fakeCloseQuicListener) Close() error {
-	if atomic.CompareAndSwapInt32(&fcql.closed, 0, 1) {
-		fcql.contextCancel()
-		_, _ = listenerPool.Delete(fcql.sharedQuicListener.key)
 	}
 	return nil
 }
@@ -302,17 +242,6 @@ func (sl *sharedListener) setDeadline() error {
 // finally not being used anymore. It closes the socket.
 func (sl *sharedListener) Destruct() error {
 	return sl.Listener.Close()
-}
-
-// sharedQuicListener is like sharedListener, but for quic.EarlyListeners.
-type sharedQuicListener struct {
-	quic.EarlyListener
-	key string
-}
-
-// Destruct closes the underlying QUIC listener.
-func (sql *sharedQuicListener) Destruct() error {
-	return sql.EarlyListener.Close()
 }
 
 // sharedPacketConn is like sharedListener, but for net.PacketConns.

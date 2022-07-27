@@ -29,7 +29,6 @@ import (
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/modules/caddytls"
 	"github.com/caddyserver/certmagic"
-	"github.com/lucas-clemente/quic-go/http3"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -137,20 +136,11 @@ type Server struct {
 	logger       *zap.Logger
 	accessLogger *zap.Logger
 	errorLogger  *zap.Logger
-
-	h3server *http3.Server
 }
 
 // ServeHTTP is the entry point for all HTTP requests.
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Server", "Caddy")
-
-	if s.h3server != nil {
-		err := s.h3server.SetQuicHeaders(w.Header())
-		if err != nil {
-			s.logger.Error("setting HTTP/3 Alt-Svc header", zap.Error(err))
-		}
-	}
 
 	// reject very long methods; probably a mistake or an attack
 	if len(r.Method) > 32 {

@@ -24,7 +24,6 @@ import (
 
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/modules/caddytls"
-	"github.com/lucas-clemente/quic-go/http3"
 	"go.uber.org/zap"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
@@ -116,8 +115,7 @@ type App struct {
 	// affect functionality.
 	Servers map[string]*Server `json:"servers,omitempty"`
 
-	servers   []*http.Server
-	h3servers []*http3.Server
+	servers []*http.Server
 
 	ctx    caddy.Context
 	logger *zap.Logger
@@ -345,29 +343,6 @@ func (app *App) Start() error {
 					// create TLS listener
 					tlsCfg := srv.TLSConnPolicies.TLSConfig(app.ctx)
 					ln = tls.NewListener(ln, tlsCfg)
-
-					/////////
-					// TODO: HTTP/3 support is experimental for now
-					if srv.ExperimentalHTTP3 {
-						app.logger.Info("enabling experimental HTTP/3 listener",
-							zap.String("addr", hostport),
-						)
-						h3ln, err := caddy.ListenQUIC(hostport, tlsCfg)
-						if err != nil {
-							return fmt.Errorf("getting HTTP/3 QUIC listener: %v", err)
-						}
-						h3srv := &http3.Server{
-							Addr:           hostport,
-							Handler:        srv,
-							TLSConfig:      tlsCfg,
-							MaxHeaderBytes: srv.MaxHeaderBytes,
-						}
-						//nolint:errcheck
-						go h3srv.ServeListener(h3ln)
-						app.h3servers = append(app.h3servers, h3srv)
-						srv.h3server = h3srv
-					}
-					/////////
 				}
 
 				// finish wrapping listener where we left off before TLS
@@ -386,7 +361,6 @@ func (app *App) Start() error {
 
 				app.logger.Debug("starting server loop",
 					zap.String("address", ln.Addr().String()),
-					zap.Bool("http3", srv.ExperimentalHTTP3),
 					zap.Bool("tls", useTLS),
 				)
 
@@ -418,16 +392,6 @@ func (app *App) Stop() error {
 	for i, s := range app.servers {
 		if err := s.Shutdown(ctx); err != nil {
 			app.logger.Error("server shutdown",
-				zap.Error(err),
-				zap.Int("index", i))
-		}
-	}
-
-	for i, s := range app.h3servers {
-		// TODO: CloseGracefully, once implemented upstream
-		// (see https://github.com/lucas-clemente/quic-go/issues/2103)
-		if err := s.Close(); err != nil {
-			app.logger.Error("HTTP/3 server shutdown",
 				zap.Error(err),
 				zap.Int("index", i))
 		}
