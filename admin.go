@@ -40,7 +40,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/caddyserver/caddy/v2/notify"
+	"github.com/btwiuse/caddy/notify"
 	"github.com/caddyserver/certmagic"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"

@@ -23,10 +23,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddytls"
+	"github.com/btwiuse/caddy"
+	"github.com/btwiuse/caddy/caddyconfig"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
+	"github.com/btwiuse/caddy/modules/caddytls"
 	"github.com/caddyserver/certmagic"
 	"github.com/mholt/acmez/acme"
 )

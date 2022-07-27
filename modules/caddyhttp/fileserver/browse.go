@@ -26,9 +26,9 @@ import (
 	"sync"
 	"text/template"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp/templates"
+	"github.com/btwiuse/caddy"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
+	"github.com/btwiuse/caddy/modules/caddyhttp/templates"
 	"go.uber.org/zap"
 )
 

@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/btwiuse/caddy"
 )
 
 // Adapter is a type which can adapt a configuration to Caddy JSON.

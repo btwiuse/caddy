@@ -22,11 +22,11 @@ import (
 	"time"
 
 	"github.com/aryann/difflib"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	caddycmd "github.com/caddyserver/caddy/v2/cmd"
+	"github.com/btwiuse/caddy/caddyconfig"
+	caddycmd "github.com/btwiuse/caddy/cmd"
 
 	// plug in Caddy modules here
-	_ "github.com/caddyserver/caddy/v2/modules/standard"
+	_ "github.com/btwiuse/caddy/modules/standard"
 )
 
 // Defaults store any configuration required to make the tests run

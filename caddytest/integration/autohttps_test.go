@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/caddyserver/caddy/v2/caddytest"
+	"github.com/btwiuse/caddy/caddytest"
 )
 
 func TestAutoHTTPtoHTTPSRedirectsImplicitPort(t *testing.T) {

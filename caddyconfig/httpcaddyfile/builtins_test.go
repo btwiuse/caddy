@@ -3,8 +3,8 @@ package httpcaddyfile
 import (
 	"testing"
 
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	_ "github.com/caddyserver/caddy/v2/modules/logging"
+	"github.com/btwiuse/caddy/caddyconfig/caddyfile"
+	_ "github.com/btwiuse/caddy/modules/logging"
 )
 
 func TestLogDirectiveSyntax(t *testing.T) {

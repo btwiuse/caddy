@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/caddyserver/caddy/v2/caddytest"
+	"github.com/btwiuse/caddy/caddytest"
 )
 
 func TestSRVReverseProxy(t *testing.T) {

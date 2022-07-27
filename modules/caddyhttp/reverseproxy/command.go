@@ -21,13 +21,13 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
-	caddycmd "github.com/caddyserver/caddy/v2/cmd"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp/headers"
-	"github.com/caddyserver/caddy/v2/modules/caddytls"
+	"github.com/btwiuse/caddy"
+	"github.com/btwiuse/caddy/caddyconfig"
+	"github.com/btwiuse/caddy/caddyconfig/httpcaddyfile"
+	caddycmd "github.com/btwiuse/caddy/cmd"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
+	"github.com/btwiuse/caddy/modules/caddyhttp/headers"
+	"github.com/btwiuse/caddy/modules/caddytls"
 )
 
 func init() {

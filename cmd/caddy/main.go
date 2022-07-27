@@ -29,10 +29,10 @@
 package main
 
 import (
-	caddycmd "github.com/caddyserver/caddy/v2/cmd"
+	caddycmd "github.com/btwiuse/caddy/cmd"
 
 	// plug in Caddy modules here
-	_ "github.com/caddyserver/caddy/v2/modules/standard"
+	_ "github.com/btwiuse/caddy/modules/standard"
 )
 
 func main() {

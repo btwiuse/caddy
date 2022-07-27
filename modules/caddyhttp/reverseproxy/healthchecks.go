@@ -27,8 +27,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/btwiuse/caddy"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
 	"go.uber.org/zap"
 )
 

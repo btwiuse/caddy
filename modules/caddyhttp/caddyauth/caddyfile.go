@@ -15,10 +15,10 @@
 package caddyauth
 
 import (
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/btwiuse/caddy"
+	"github.com/btwiuse/caddy/caddyconfig"
+	"github.com/btwiuse/caddy/caddyconfig/httpcaddyfile"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
 )
 
 func init() {

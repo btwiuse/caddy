@@ -18,10 +18,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/btwiuse/caddy"
+	"github.com/btwiuse/caddy/caddyconfig"
+	"github.com/btwiuse/caddy/caddyconfig/caddyfile"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
 	"github.com/dustin/go-humanize"
 )
 

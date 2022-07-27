@@ -23,7 +23,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/btwiuse/caddy"
 	"github.com/mholt/acmez"
 )
 

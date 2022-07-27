@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/btwiuse/caddy"
 
-	caddycmd "github.com/caddyserver/caddy/v2/cmd"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	caddycmd "github.com/btwiuse/caddy/cmd"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 	"go.opentelemetry.io/otel/propagation"

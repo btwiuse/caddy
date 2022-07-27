@@ -15,9 +15,9 @@
 package httpcaddyfile
 
 import (
-	"github.com/caddyserver/caddy/v2/caddyconfig"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddypki"
+	"github.com/btwiuse/caddy/caddyconfig"
+	"github.com/btwiuse/caddy/caddyconfig/caddyfile"
+	"github.com/btwiuse/caddy/modules/caddypki"
 )
 
 func init() {

@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/btwiuse/caddy"
 )
 
 // Route consists of a set of rules for matching HTTP requests,

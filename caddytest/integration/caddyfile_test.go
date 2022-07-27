@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/caddyserver/caddy/v2/caddytest"
+	"github.com/btwiuse/caddy/caddytest"
 )
 
 func TestRespond(t *testing.T) {

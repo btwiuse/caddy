@@ -23,7 +23,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/btwiuse/caddy"
 )
 
 func TestHTTPVarReplacement(t *testing.T) {

@@ -3,7 +3,7 @@ package metrics
 import (
 	"testing"
 
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/btwiuse/caddy/caddyconfig/caddyfile"
 )
 
 func TestMetricsUnmarshalCaddyfile(t *testing.T) {

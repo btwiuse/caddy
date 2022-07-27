@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/btwiuse/caddy"
 )
 
 func TestOpenTelemetryWrapper_newOpenTelemetryWrapper(t *testing.T) {

@@ -24,8 +24,8 @@ import (
 	"os"
 	"path"
 
-	"github.com/caddyserver/caddy/v2"
-	caddycmd "github.com/caddyserver/caddy/v2/cmd"
+	"github.com/btwiuse/caddy"
+	caddycmd "github.com/btwiuse/caddy/cmd"
 	"github.com/smallstep/truststore"
 )
 

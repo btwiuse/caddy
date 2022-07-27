@@ -17,8 +17,8 @@ package maphandler
 import (
 	"strings"
 
-	"github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/btwiuse/caddy/caddyconfig/httpcaddyfile"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
 )
 
 func init() {

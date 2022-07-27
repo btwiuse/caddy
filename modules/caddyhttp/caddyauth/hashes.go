@@ -17,7 +17,7 @@ package caddyauth
 import (
 	"crypto/subtle"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/btwiuse/caddy"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/crypto/scrypt"
 )

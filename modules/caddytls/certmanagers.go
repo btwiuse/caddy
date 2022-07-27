@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/btwiuse/caddy"
+	"github.com/btwiuse/caddy/caddyconfig/caddyfile"
 	"github.com/caddyserver/certmagic"
 	"github.com/tailscale/tscert"
 	"go.uber.org/zap"

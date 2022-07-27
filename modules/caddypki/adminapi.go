@@ -20,7 +20,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/caddyserver/caddy/v2"
+	"github.com/btwiuse/caddy"
 	"go.uber.org/zap"
 )
 

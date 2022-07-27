@@ -17,10 +17,10 @@ package metrics
 import (
 	"net/http"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/caddyserver/caddy/v2/caddyconfig/httpcaddyfile"
-	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
+	"github.com/btwiuse/caddy"
+	"github.com/btwiuse/caddy/caddyconfig/caddyfile"
+	"github.com/btwiuse/caddy/caddyconfig/httpcaddyfile"
+	"github.com/btwiuse/caddy/modules/caddyhttp"
 
 	"go.uber.org/zap"
 

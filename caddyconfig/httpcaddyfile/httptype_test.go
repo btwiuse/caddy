@@ -3,7 +3,7 @@ package httpcaddyfile
 import (
 	"testing"
 
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/btwiuse/caddy/caddyconfig/caddyfile"
 )
 
 func TestMatcherSyntax(t *testing.T) {
