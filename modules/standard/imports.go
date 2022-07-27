@@ -3,7 +3,7 @@ package standard
 import (
 	// standard Caddy modules
 	_ "github.com/btwiuse/caddy/caddyconfig/caddyfile"
-	// _ "github.com/btwiuse/caddy/modules/caddyhttp/standard"
+	_ "github.com/btwiuse/caddy/modules/caddyhttp/standard"
 	// _ "github.com/btwiuse/caddy/modules/caddypki"
 	// _ "github.com/btwiuse/caddy/modules/caddypki/acmeserver"
 	// _ "github.com/btwiuse/caddy/modules/caddytls"
