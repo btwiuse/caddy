@@ -1,34 +1,38 @@
-module github.com/btwiuse/caddy/modules/caddypki
+module github.com/btwiuse/caddy/caddyconfig
 
 go 1.19
 
-replace github.com/btwiuse/caddy => ../../
+replace github.com/btwiuse/caddy => ../
 
-replace github.com/btwiuse/caddy/modules/caddyhttp => ../caddyhttp/
+replace github.com/btwiuse/caddy/caddyconfig => ./
 
-replace github.com/btwiuse/caddy/modules/caddypki => ./
+replace github.com/btwiuse/caddy/caddytest => ../caddytest/
 
-replace github.com/btwiuse/caddy/modules/caddytls => ../caddytls/
+replace github.com/btwiuse/caddy/cmd => ../cmd/
 
-replace github.com/btwiuse/caddy/modules/filestorage => ../filestorage/
+replace github.com/btwiuse/caddy/modules/caddyhttp => ../modules/caddyhttp/
 
-replace github.com/btwiuse/caddy/modules/logging => ../logging/
+replace github.com/btwiuse/caddy/modules/caddypki => ../modules/caddypki/
 
-replace github.com/btwiuse/caddy/modules/metrics => ../metrics/
+replace github.com/btwiuse/caddy/modules/caddytls => ../modules/caddytls/
 
-replace github.com/btwiuse/caddy/modules/standard => ../standard/
+replace github.com/btwiuse/caddy/modules/filestorage => ../modules/filestorage/
+
+replace github.com/btwiuse/caddy/modules/logging => ../modules/logging/
+
+replace github.com/btwiuse/caddy/modules/metrics => ../modules/metrics/
+
+replace github.com/btwiuse/caddy/modules/standard => ../modules/standard/
 
 require (
 	github.com/btwiuse/caddy v0.0.0-00010101000000-000000000000
-	github.com/btwiuse/caddy/caddyconfig v0.0.0-00010101000000-000000000000
-	github.com/btwiuse/caddy/cmd v0.0.0-00010101000000-000000000000
 	github.com/btwiuse/caddy/modules/caddyhttp v0.0.0-00010101000000-000000000000
+	github.com/btwiuse/caddy/modules/caddypki v0.0.0-00010101000000-000000000000
+	github.com/btwiuse/caddy/modules/caddytls v0.0.0-00010101000000-000000000000
+	github.com/btwiuse/caddy/modules/logging v0.0.0-00010101000000-000000000000
 	github.com/caddyserver/certmagic v0.16.1
-	github.com/go-chi/chi v4.1.2+incompatible
-	github.com/smallstep/certificates v0.21.0
-	github.com/smallstep/cli v0.21.0
-	github.com/smallstep/nosql v0.4.0
-	github.com/smallstep/truststore v0.11.0
+	github.com/dustin/go-humanize v1.0.1-0.20200219035652-afde56e7acac
+	github.com/mholt/acmez v1.0.3
 	go.uber.org/zap v1.21.0
 )
 
@@ -41,7 +45,7 @@ require (
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220418222510-f25a4f6275ed // indirect
 	github.com/aryann/difflib v0.0.0-20210328193216-ff5ff6dc229b // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/btwiuse/caddy/modules/caddytls v0.0.0-00010101000000-000000000000 // indirect
+	github.com/btwiuse/caddy/cmd v0.0.0-00010101000000-000000000000 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
@@ -50,7 +54,6 @@ require (
 	github.com/dgraph-io/badger/v2 v2.2007.4 // indirect
 	github.com/dgraph-io/ristretto v0.0.4-0.20200906165740-41ebdbffecfd // indirect
 	github.com/dgryski/go-farm v0.0.0-20200201041132-a6ae2369ad13 // indirect
-	github.com/dustin/go-humanize v1.0.1-0.20200219035652-afde56e7acac // indirect
 	github.com/go-kit/kit v0.10.0 // indirect
 	github.com/go-logfmt/logfmt v0.5.0 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
@@ -76,7 +79,6 @@ require (
 	github.com/mattn/go-isatty v0.0.13 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
-	github.com/mholt/acmez v1.0.3 // indirect
 	github.com/micromdm/scep/v2 v2.1.0 // indirect
 	github.com/miekg/dns v1.1.46 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
@@ -93,6 +95,10 @@ require (
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/slackhq/nebula v1.5.2 // indirect
+	github.com/smallstep/certificates v0.21.0 // indirect
+	github.com/smallstep/cli v0.21.0 // indirect
+	github.com/smallstep/nosql v0.4.0 // indirect
+	github.com/smallstep/truststore v0.11.0 // indirect
 	github.com/spf13/cast v1.4.1 // indirect
 	github.com/stoewer/go-strcase v1.2.0 // indirect
 	github.com/tailscale/tscert v0.0.0-20220316030059-54bbcb9f74e2 // indirect
@@ -115,12 +121,7 @@ require (
 	google.golang.org/genproto v0.0.0-20220725144611-272f38e5d71b // indirect
 	google.golang.org/grpc v1.48.0 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
+	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
 	howett.net/plist v1.0.0 // indirect
 )
-
-replace github.com/btwiuse/caddy/caddyconfig => ../../caddyconfig/
-
-replace github.com/btwiuse/caddy/caddytest => ../../caddytest/
-
-replace github.com/btwiuse/caddy/cmd => ../../cmd/

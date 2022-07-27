@@ -2,6 +2,9 @@ go 1.19
 
 use (
 	.
+	./caddyconfig
+	./caddytest
+	./cmd
 	./modules/caddyhttp
 	./modules/caddypki
 	./modules/caddytls
