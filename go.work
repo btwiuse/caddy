@@ -1,0 +1,12 @@
+go 1.19
+
+use (
+	.
+	./modules/caddyhttp
+	./modules/caddypki
+	./modules/caddytls
+	./modules/filestorage
+	./modules/logging
+	./modules/metrics
+	./modules/standard
+)
