@@ -2,33 +2,11 @@ module github.com/btwiuse/caddy/cmd
 
 go 1.19
 
-replace github.com/btwiuse/caddy => ../
-
-replace github.com/btwiuse/caddy/caddyconfig => ../caddyconfig/
-
-replace github.com/btwiuse/caddy/caddytest => ../caddytest/
-
-replace github.com/btwiuse/caddy/cmd => ./
-
-replace github.com/btwiuse/caddy/modules/caddyhttp => ../modules/caddyhttp/
-
-replace github.com/btwiuse/caddy/modules/caddypki => ../modules/caddypki/
-
-replace github.com/btwiuse/caddy/modules/caddytls => ../modules/caddytls/
-
-replace github.com/btwiuse/caddy/modules/filestorage => ../modules/filestorage/
-
-replace github.com/btwiuse/caddy/modules/logging => ../modules/logging/
-
-replace github.com/btwiuse/caddy/modules/metrics => ../modules/metrics/
-
-replace github.com/btwiuse/caddy/modules/standard => ../modules/standard/
-
 require (
 	github.com/aryann/difflib v0.0.0-20210328193216-ff5ff6dc229b
-	github.com/btwiuse/caddy v0.0.0-00010101000000-000000000000
-	github.com/btwiuse/caddy/caddyconfig v0.0.0-00010101000000-000000000000
-	github.com/btwiuse/caddy/modules/standard v0.0.0-00010101000000-000000000000
+	github.com/btwiuse/caddy v0.0.2
+	github.com/btwiuse/caddy/caddyconfig v0.0.2
+	github.com/btwiuse/caddy/modules/standard v0.0.2
 	github.com/caddyserver/certmagic v0.16.1
 	go.uber.org/zap v1.21.0
 )
@@ -43,11 +21,11 @@ require (
 	github.com/alecthomas/chroma v0.10.0 // indirect
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220418222510-f25a4f6275ed // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/btwiuse/caddy/modules/caddyhttp v0.0.0-00010101000000-000000000000 // indirect
-	github.com/btwiuse/caddy/modules/caddypki v0.0.0-00010101000000-000000000000 // indirect
-	github.com/btwiuse/caddy/modules/caddytls v0.0.0-00010101000000-000000000000 // indirect
-	github.com/btwiuse/caddy/modules/filestorage v0.0.0-00010101000000-000000000000 // indirect
-	github.com/btwiuse/caddy/modules/logging v0.0.0-00010101000000-000000000000 // indirect
+	github.com/btwiuse/caddy/modules/caddyhttp v0.0.2 // indirect
+	github.com/btwiuse/caddy/modules/caddypki v0.0.2 // indirect
+	github.com/btwiuse/caddy/modules/caddytls v0.0.2 // indirect
+	github.com/btwiuse/caddy/modules/filestorage v0.0.2 // indirect
+	github.com/btwiuse/caddy/modules/logging v0.0.2 // indirect
 	github.com/cenkalti/backoff/v4 v4.1.3 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect

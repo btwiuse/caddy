@@ -2,30 +2,14 @@ module github.com/btwiuse/caddy/modules/caddyhttp
 
 go 1.19
 
-replace github.com/btwiuse/caddy => ../../
-
-replace github.com/btwiuse/caddy/modules/caddyhttp => ./
-
-replace github.com/btwiuse/caddy/modules/caddypki => ../caddypki/
-
-replace github.com/btwiuse/caddy/modules/caddytls => ../caddytls/
-
-replace github.com/btwiuse/caddy/modules/filestorage => ../filestorage/
-
-replace github.com/btwiuse/caddy/modules/logging => ../logging/
-
-replace github.com/btwiuse/caddy/modules/metrics => ../metrics/
-
-replace github.com/btwiuse/caddy/modules/standard => ../standard/
-
 require (
 	github.com/BurntSushi/toml v1.2.0
 	github.com/Masterminds/sprig/v3 v3.2.2
 	github.com/alecthomas/chroma v0.10.0
-	github.com/btwiuse/caddy v0.0.0-00010101000000-000000000000
-	github.com/btwiuse/caddy/caddyconfig v0.0.0-00010101000000-000000000000
-	github.com/btwiuse/caddy/cmd v0.0.0-00010101000000-000000000000
-	github.com/btwiuse/caddy/modules/caddytls v0.0.0-00010101000000-000000000000
+	github.com/btwiuse/caddy v0.0.2
+	github.com/btwiuse/caddy/caddyconfig v0.0.2
+	github.com/btwiuse/caddy/cmd v0.0.2
+	github.com/btwiuse/caddy/modules/caddytls v0.0.2
 	github.com/caddyserver/certmagic v0.16.1
 	github.com/dustin/go-humanize v1.0.1-0.20200219035652-afde56e7acac
 	github.com/google/cel-go v0.12.4
@@ -55,7 +39,7 @@ require (
 	github.com/antlr/antlr4/runtime/Go/antlr v0.0.0-20220418222510-f25a4f6275ed // indirect
 	github.com/aryann/difflib v0.0.0-20210328193216-ff5ff6dc229b // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/btwiuse/caddy/modules/caddypki v0.0.0-00010101000000-000000000000 // indirect
+	github.com/btwiuse/caddy/modules/caddypki v0.0.2 // indirect
 	github.com/cenkalti/backoff/v4 v4.1.3 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
@@ -137,9 +121,3 @@ require (
 	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
 	howett.net/plist v1.0.0 // indirect
 )
-
-replace github.com/btwiuse/caddy/caddyconfig => ../../caddyconfig/
-
-replace github.com/btwiuse/caddy/caddytest => ../../caddytest/
-
-replace github.com/btwiuse/caddy/cmd => ../../cmd/

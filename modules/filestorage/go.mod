@@ -2,25 +2,9 @@ module github.com/btwiuse/caddy/modules/filestorage
 
 go 1.19
 
-replace github.com/btwiuse/caddy => ../../
-
-replace github.com/btwiuse/caddy/modules/caddyhttp => ../caddyhttp/
-
-replace github.com/btwiuse/caddy/modules/caddypki => ../caddypki/
-
-replace github.com/btwiuse/caddy/modules/caddytls => ../caddytls/
-
-replace github.com/btwiuse/caddy/modules/filestorage => ./
-
-replace github.com/btwiuse/caddy/modules/logging => ../logging/
-
-replace github.com/btwiuse/caddy/modules/metrics => ../metrics/
-
-replace github.com/btwiuse/caddy/modules/standard => ../standard/
-
 require (
-	github.com/btwiuse/caddy v0.0.0-00010101000000-000000000000
-	github.com/btwiuse/caddy/caddyconfig v0.0.0-00010101000000-000000000000
+	github.com/btwiuse/caddy v0.0.2
+	github.com/btwiuse/caddy/caddyconfig v0.0.2
 	github.com/caddyserver/certmagic v0.16.1
 )
 
@@ -51,9 +35,3 @@ require (
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 )
-
-replace github.com/btwiuse/caddy/caddyconfig => ../../caddyconfig/
-
-replace github.com/btwiuse/caddy/caddytest => ../../caddytest/
-
-replace github.com/btwiuse/caddy/cmd => ../../cmd/
