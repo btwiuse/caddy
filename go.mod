@@ -36,25 +36,3 @@ require (
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/protobuf v1.28.0 // indirect
 )
-
-replace github.com/btwiuse/caddy => ././
-
-replace github.com/btwiuse/caddy/modules/caddyhttp => ./modules/caddyhttp/
-
-replace github.com/btwiuse/caddy/modules/caddypki => ./modules/caddypki/
-
-replace github.com/btwiuse/caddy/modules/caddytls => ./modules/caddytls/
-
-replace github.com/btwiuse/caddy/modules/filestorage => ./modules/filestorage/
-
-replace github.com/btwiuse/caddy/modules/logging => ./modules/logging/
-
-replace github.com/btwiuse/caddy/modules/metrics => ./modules/metrics/
-
-replace github.com/btwiuse/caddy/modules/standard => ./modules/standard/
-
-replace github.com/btwiuse/caddy/caddyconfig => ./caddyconfig/
-
-replace github.com/btwiuse/caddy/caddytest => ./caddytest/
-
-replace github.com/btwiuse/caddy/cmd => ./cmd/

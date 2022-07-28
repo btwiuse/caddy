@@ -2,22 +2,6 @@ module github.com/btwiuse/caddy/modules/caddyhttp
 
 go 1.19
 
-replace github.com/btwiuse/caddy => ../../
-
-replace github.com/btwiuse/caddy/modules/caddyhttp => ./
-
-replace github.com/btwiuse/caddy/modules/caddypki => ../caddypki/
-
-replace github.com/btwiuse/caddy/modules/caddytls => ../caddytls/
-
-replace github.com/btwiuse/caddy/modules/filestorage => ../filestorage/
-
-replace github.com/btwiuse/caddy/modules/logging => ../logging/
-
-replace github.com/btwiuse/caddy/modules/metrics => ../metrics/
-
-replace github.com/btwiuse/caddy/modules/standard => ../standard/
-
 require (
 	github.com/BurntSushi/toml v1.2.0
 	github.com/Masterminds/sprig/v3 v3.2.2
@@ -137,9 +121,3 @@ require (
 	gopkg.in/square/go-jose.v2 v2.6.0 // indirect
 	howett.net/plist v1.0.0 // indirect
 )
-
-replace github.com/btwiuse/caddy/caddyconfig => ../../caddyconfig/
-
-replace github.com/btwiuse/caddy/caddytest => ../../caddytest/
-
-replace github.com/btwiuse/caddy/cmd => ../../cmd/

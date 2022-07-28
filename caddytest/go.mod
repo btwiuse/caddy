@@ -2,28 +2,6 @@ module github.com/btwiuse/caddy/caddytest
 
 go 1.19
 
-replace github.com/btwiuse/caddy => ../
-
-replace github.com/btwiuse/caddy/caddyconfig => ../caddyconfig/
-
-replace github.com/btwiuse/caddy/caddytest => ./
-
-replace github.com/btwiuse/caddy/cmd => ../cmd/
-
-replace github.com/btwiuse/caddy/modules/caddyhttp => ../modules/caddyhttp/
-
-replace github.com/btwiuse/caddy/modules/caddypki => ../modules/caddypki/
-
-replace github.com/btwiuse/caddy/modules/caddytls => ../modules/caddytls/
-
-replace github.com/btwiuse/caddy/modules/filestorage => ../modules/filestorage/
-
-replace github.com/btwiuse/caddy/modules/logging => ../modules/logging/
-
-replace github.com/btwiuse/caddy/modules/metrics => ../modules/metrics/
-
-replace github.com/btwiuse/caddy/modules/standard => ../modules/standard/
-
 require (
 	github.com/aryann/difflib v0.0.0-20210328193216-ff5ff6dc229b
 	github.com/btwiuse/caddy/caddyconfig v0.0.0-00010101000000-000000000000
